@@ -4,5 +4,10 @@
     <string name="app_name">TestCanvasApplication</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dragndrop">drag and drop</string>
+    <string name="dessin">dessin</string>
+    <string name="title_activity_drag_ndrop">DragNDropActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
