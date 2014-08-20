@@ -2,8 +2,6 @@ package com.tpandroid.nicolas.testcanvasapplication.util;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +21,10 @@ public class Dessin extends View implements View.OnTouchListener {
         setOnTouchListener(this);
     }
 
+    /**
+     * Permet de dessiner les cercles enregistrés dans la liste
+     * @param canvas
+     */
     @Override
     protected void onDraw(Canvas canvas) {
         for (Cercle cercle : listeCercles){
@@ -30,6 +32,13 @@ public class Dessin extends View implements View.OnTouchListener {
         }
     }
 
+    /**
+     * Permet de dessiner un cercle de rayon spot-touché à spot-relaché
+     * Redessine le canvas à chaque création de cercle.
+     * @param v vue ou dessiner
+     * @param event event déclancheur (touché ou relaché)
+     * @return
+     */
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         int x = (int)event.getX(); int y = (int)event.getY();
@@ -45,21 +54,5 @@ public class Dessin extends View implements View.OnTouchListener {
         }
         this.invalidate();
         return true;
-    }
-
-    class Cercle {
-        int xc, yc, rayon;
-        private Paint paint;
-        public Cercle(int x, int y, int r) {
-            xc = x;
-            yc = y;
-            rayon = r;
-            paint = new Paint();
-            paint.setColor(Color.rgb((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
-        }
-        public void draw(Canvas canvas)
-        {
-            canvas.drawCircle(xc, yc, rayon, paint);
-        }
     }
 }
