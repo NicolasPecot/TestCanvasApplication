@@ -36,7 +36,7 @@ public class Dessin extends View implements View.OnTouchListener {
      * Permet de dessiner un cercle de rayon spot-touché à spot-relaché
      * Redessine le canvas à chaque création de cercle.
      * @param v vue ou dessiner
-     * @param event event déclancheur (touché ou relaché)
+     * @param event event déclencheur (touché ou relaché)
      * @return
      */
     @Override

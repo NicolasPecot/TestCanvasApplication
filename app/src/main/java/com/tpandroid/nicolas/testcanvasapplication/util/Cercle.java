@@ -9,8 +9,10 @@ import android.graphics.Paint;
  * Created by nicolas on 20/08/14.
  */
 public class Cercle {
+
     int xc, yc, rayon;
     private Paint paint;
+
     public Cercle(int x, int y, int r) {
         xc = x;
         yc = y;
