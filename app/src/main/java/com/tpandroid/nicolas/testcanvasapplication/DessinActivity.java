@@ -1,6 +1,7 @@
 package com.tpandroid.nicolas.testcanvasapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,11 +32,10 @@ public class DessinActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_dragdrop){
-            // Créer une nouvelle activité pour le drag &
+            // Créer une nouvelle activité pour le drag & drop
+            Intent intent = new Intent(DessinActivity.this, DragNDropActivity.class);
+            startActivity(intent);
         }
-        if (item.getItemId() == R.id.menu_draw) {
-            return super.onOptionsItemSelected(item);
-        }
-        return true;
+        return item.getItemId() != R.id.menu_draw || super.onOptionsItemSelected(item);
     }
 }
